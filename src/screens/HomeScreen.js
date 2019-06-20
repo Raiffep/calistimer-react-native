@@ -25,7 +25,7 @@ const HomeScreen = props => {
     )
 }
 HomeScreen.navigationOptions = {
-    header: null
+    header: null,
 }
 
 const styles = StyleSheet.create({
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column', 
     },
     box1: {
-        bottom: 1,
+        //bottom: 1,
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
         width: '100%',
@@ -49,11 +49,11 @@ const styles = StyleSheet.create({
     
     box2: {
         alignSelf: 'center',
-        top: -130,
+        top: '-14%',
         backgroundColor: 'transparent',
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
-        width: '105%',
+        width: '103%',
         height: '50%',
         shadowColor: 'rgba(1, 1, 1, 1)',
         shadowOffset: {width: 5, height: 5},
@@ -65,11 +65,11 @@ const styles = StyleSheet.create({
 
     box3: {
         alignSelf: 'center',
-        top: -520,
+        top: '-74%',
         backgroundColor: 'transparent',
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
-        width: '105%',
+        width: '103%',
         height: '50%',
         shadowColor: '#111',
         shadowOffset: {width: 5, heightBottom: 5},
@@ -81,11 +81,11 @@ const styles = StyleSheet.create({
 
     box4: {
         alignSelf: 'center',
-        top: -910,
+        top: '-134%',
         backgroundColor: 'transparent',
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
-        width: '105%',
+        width: '103%',
         height: '50%',
         shadowColor: 'rgba(1, 1, 1, 1)',
         shadowOffset: {width: 5, height: 5},
@@ -105,14 +105,15 @@ const styles = StyleSheet.create({
         textShadowColor: 'rgba(0, 0, 0, 0.15)',
         textShadowOffset: {width: -1, height: 1},
         textShadowRadius: 10,
+        paddingTop: '5%',
     },
     btn: {
-        padding: 20,
+        padding: '13%',
         marginTop: 0,     
     },
 
     footer: {
-        top: 645,
+        top: '95%',
         position: 'absolute',
         backgroundColor: 'transparent',
         alignSelf: 'center',

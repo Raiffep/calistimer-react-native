@@ -3,6 +3,8 @@ import { View, Keyboard, ScrollView, Text, StyleSheet, TouchableOpacity, Image, 
 import Select from '../components/Select'
 import Title from '../components/Title'
 import Time from '../components/Time'
+import ProgressBar from '../components/ProgressBar'
+import BackgroundProgress from '../components/BackgroundProgress'
 
 class EMOMScreen extends Component {
     state = {
@@ -53,16 +55,19 @@ class EMOMScreen extends Component {
     }
     render() {
         if(this.state.isRunning) {
-            const percMinute = (this.state.count % 60) / 60
-            const percTime = (this.state.count / 60) / parseInt(this.state.time)
+            const percMinute = parseInt(((this.state.count % 60) / 60)*100)
+            const percTime = parseInt(((this.state.count / 60) / parseInt(this.state.time))*100)
             return(
-                <View style={[styles.container, { justifyContent: 'center' }]}>
-                    <Text>Countdown: {this.state.countdownValue}</Text>
-                    <Text>Count: {this.state.count}</Text>
-                    <Time time={this.state.count} />
-                    <Text>Minute: {percMinute}</Text>
-                    <Text>Time: {percTime}</Text>
-                </View>
+                <BackgroundProgress percentage={percMinute}>
+                    <View style={{ flex: 1, justifyContent: 'center' }}>
+                        <Text>Countdown: {this.state.countdownValue}</Text>
+                        <Text>Count: {this.state.count}</Text>
+                        <Time time={this.state.count} />
+                        <Text>Minute: {percMinute}</Text>
+                        <Text>Time: {percTime}</Text>
+                        <ProgressBar percentage={percTime}/>
+                    </View>
+                </BackgroundProgress>
             )
         }
         return (
@@ -114,7 +119,6 @@ class EMOMScreen extends Component {
                     <TouchableOpacity style={styles.imgPlay} onPress={this.play}>
                         <Image source={require('../../assets/play-button.png')} />
                     </TouchableOpacity>
-                    <Text>Testar</Text>
                 </ScrollView>
             </KeyboardAvoidingView>
         )
